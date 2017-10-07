@@ -1,5 +1,9 @@
 # Ace's HTML Report
 
+_This page is very much a work in progress_
+
+In this report, you'll find a violations table, telling you which automated checks failed and why; and a series of sections containing extracted data, such as a headings outline and list of images, to highlight potential problem areas and to assist in manual checking.
+
 This report includes:
 
 * Basic information about the book (`Metadata details`)

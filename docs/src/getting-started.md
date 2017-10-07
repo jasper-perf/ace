@@ -50,12 +50,6 @@ _Note that if you do not specify a directory with `--outputdir`, no reports get 
 If the specified directory does not exist, it will be created. In this example, two versions of the results report will be found under the `~/Documents/moby-dick-report` directory:
 
 * `report.json`: A machine-readable version of the report, in JSON format
-* `report.html`: A human-readable version of the report, in HTML format
+* `report.html`: A human-readable version of the report, in HTML format.
 
 Read a [detailed overview](reports.html) of these formats.
-
-### Viewing the report
-
-Find the directory where Ace saved its output. Double-click `report.html` to view the report in a web browser. In it, you'll find a violations table, telling you which automated checks failed and why; and a series of sections containing extracted data, such as a headings outline and list of images, to highlight potential problem areas and to assist in manual checking.
-
-Read a [detailed overview](report-html.html) of the HTML report format.
