@@ -1,0 +1,49 @@
+<h1 id="getting-started">Getting started</h1>
+<ul>
+<li><a href="#installation">Installation</a><ul>
+<li><a href="#install-nodejs">Install Node.JS</a></li>
+<li><a href="#install-ace">Install Ace</a></li>
+</ul>
+</li>
+<li><a href="#usage">Usage</a><ul>
+<li><a href="#checking-an-epub">Checking an EPUB</a></li>
+<li><a href="#getting-the-results">Getting the results</a></li>
+<li><a href="#viewing-the-report">Viewing the report</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<h3 id="install-node-js">Install Node.JS</h3>
+<ul>
+<li>Go to <a href="https://nodejs.org/">Node.JS</a></li>
+<li>Download version 6 or higher</li>
+<li>Double-click to install</li>
+</ul>
+<h3 id="install-ace">Install Ace</h3>
+<ul>
+<li>After installing Node, open a shell window<ul>
+<li>On Windows: <code>Windows System-&gt;Command Prompt</code> <em>or</em> <code>Start-&gt;Run-&gt;cmd.exe</code></li>
+<li>On Mac: <code>Applications-&gt;Utilities-&gt;Terminal</code></li>
+</ul>
+</li>
+<li>Type <code>npm install ace-core -g</code> to install Ace</li>
+</ul>
+<p>If everything went smoothly, you should now be able to run the <code>ace</code> command in your shell.</p>
+<h2 id="usage">Usage</h2>
+<h3 id="checking-an-epub">Checking an EPUB</h3>
+<p>You can check an EPUB by running the <code>ace</code> command followed by the path to the EPUB document. For example:</p>
+<pre><code>$ ace ~/Documents/moby-dick.epub
+</code></pre><p>The above command will run the automated accessibility tests on the EPUB document and output the results.</p>
+<h3 id="getting-the-results">Getting the results</h3>
+<p>You can specify the directory for Ace to store its output with the <code>--outputdir</code> option. For example:</p>
+<pre><code>$ ace --outputdir ~/Documents/moby-dick-report ~/Documents/moby-dick.epub
+</code></pre><p><em>Note that if you do not specify a directory with <code>--outputdir</code>, no reports get saved. You would only see output in the shell.</em></p>
+<p>If the specified directory does not exist, it will be created. In this example, two versions of the results report will be found under the <code>~/Documents/moby-dick-report</code> directory:</p>
+<ul>
+<li><code>report.json</code>: A machine-readable version of the report, in JSON format</li>
+<li><code>report.html</code>: A human-readable version of the report, in HTML format</li>
+</ul>
+<p>Read a <a href="reports.html">detailed overview</a> of these formats.</p>
+<h3 id="viewing-the-report">Viewing the report</h3>
+<p>Find the directory where Ace saved its output. Double-click <code>report.html</code> to view the report in a web browser. In it, you&#39;ll find a violations table, telling you which automated checks failed and why; and a series of sections containing extracted data, such as a headings outline and list of images, to highlight potential problem areas and to assist in manual checking.</p>
+<p>Read a <a href="report-html.html">detailed overview</a> of the HTML report format.</p>
