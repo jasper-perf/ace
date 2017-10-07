@@ -6,7 +6,6 @@
 - [Usage](#usage)
   * [Checking an EPUB](#checking-an-epub)
   * [Getting the results](#getting-the-results)
-  * [Viewing the report](#viewing-the-report)
 
 ## Installation
 
