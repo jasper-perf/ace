@@ -1,0 +1,96 @@
+<h1 id="ace-by-daisy">Ace, by DAISY</h1>
+<p>Ace, the Accessibility Checker for EPUB, is a tool developed by the <a href="http://daisy.org">DAISY Consortium</a> to assist with the evaluation of accessibility features of EPUB publications. Its automated accessibility checks assist in the evaluation of conformance to the <a href="http://www.idpf.org/epub/latest/accessibility">EPUB Accessibility</a> specification.</p>
+<p>It is important to keep in mind that only a limited portion of accessibility checks can be automated, and therefore <strong>Ace is just a helper tool to assist in a broader, human-driven, evaluation process</strong>.</p>
+<h1 id="about-this-guide">About this guide</h1>
+<p>This document is intended to help new users get started with Ace. Ace is a command line tool, which means that you&#39;ll run it by typing commands into a terminal window (also called a <em>&quot;shell&quot;</em> or <em>&quot;command prompt&quot;</em>). Here&#39;s how to open a terminal window:</p>
+<ul>
+<li>On Windows: <code>Windows System-&gt;Command Prompt</code> <em>or</em> <code>Start-&gt;Run-&gt;cmd.exe</code></li>
+<li>On Mac: <code>Applications-&gt;Utilities-&gt;Terminal</code></li>
+</ul>
+<p>Depending on which style of terminal window you use, the actual prompt might look like a dollar sign (<code>$</code>) or a greater-than sign (<code>&gt;</code>), perhaps preceded by something (e.g. <code>c:\&gt;</code>). The convention used here is <code>$</code> followed by what you should type (i.e. you don&#39;t type the dollar sign, that&#39;s just to indicate that we&#39;re using the command prompt).</p>
+<p>Another thing you should understand before using Ace is how to type the path to a file. E.g. if I have a file named <code>my-book.epub</code> in my <code>Documents</code> directory, its path would be:</p>
+<ul>
+<li>On Mac: <code>~/Documents/my-book.epub</code> (or, in expanded form, <code>/Users/username/Documents/my-book.epub</code>)</li>
+<li>On Windows: <code>c:\Users\username\Documents\my-book.epub</code>.</li>
+</ul>
+<p>Ace will require that you enter the path to your EPUB file and also the path where you would like Ace&#39;s report stored.</p>
+<p>Additional documentation for Ace, recommended for advanced users, can be found over at <a href="https://daisy.github.io/ace">github</a>.</p>
+<h1 id="getting-started">Getting started</h1>
+<ul>
+<li><a href="#installation">Installation</a><ul>
+<li><a href="#install-nodejs">Install Node.JS</a></li>
+<li><a href="#install-ace">Install Ace</a></li>
+</ul>
+</li>
+<li><a href="#usage">Usage</a><ul>
+<li><a href="#checking-an-epub">Checking an EPUB</a></li>
+<li><a href="#storing-the-results">Storing the results</a></li>
+</ul>
+</li>
+<li><a href="#the-report">The report</a><ul>
+<li><a href="#violations-table">Violations table</a></li>
+<li><a href="#outlines">Outlines</a></li>
+<li><a href="#accessibility-metadata-summary">Accessibility metadata summary</a></li>
+<li><a href="#images">Images</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="installation">Installation</h2>
+<h3 id="install-node-js">Install Node.JS</h3>
+<p>Ace relies on an open source Javascript framework called Node, which is freely available to download. You must install Node first before installing Ace. Installing Node requires administrator privileges.</p>
+<ul>
+<li>Go to <a href="https://nodejs.org/">Node.JS</a></li>
+<li>Download version 6 or higher</li>
+<li>Double-click to install and follow the instructions.</li>
+</ul>
+<h3 id="install-ace">Install Ace</h3>
+<ul>
+<li>After installing Node, open a shell window</li>
+<li>Type <code>$ npm install ace-core -g</code> to install Ace</li>
+</ul>
+<p>If everything went smoothly, you should now be able to run the <code>ace</code> command in your shell. Try typing</p>
+<pre><code>$ ace --help
+</code></pre><p>Ace should display usage information and then exit.</p>
+<h2 id="usage">Usage</h2>
+<h3 id="checking-an-epub">Checking an EPUB</h3>
+<p>You can check an EPUB by running the <code>ace</code> command followed by the path to the EPUB document. For example:</p>
+<pre><code>$ ace ~/Documents/moby-dick.epub
+</code></pre><p>The above command will run the automated accessibility tests on the EPUB document and output the results in the shell.</p>
+<h3 id="storing-the-results">Storing the results</h3>
+<p>You can specify the directory for Ace to store its output with the <code>--outputdir</code> option. For example:</p>
+<pre><code>$ ace --outputdir ~/Documents/moby-dick-report ~/Documents/moby-dick.epub
+</code></pre><p><em>Note that if you do not specify a directory with <code>--outputdir</code>, no reports get saved. You would only see output in the shell.</em></p>
+<p>If the specified directory does not exist, it will be created. In this example, two versions of the results report will be found under the <code>~/Documents/moby-dick-report</code> directory:</p>
+<ul>
+<li><code>report.html</code>: A human-readable version of the report, in HTML format.</li>
+<li><code>report.json</code>: A machine-readable version of the report, in JSON format</li>
+</ul>
+<h2 id="the-report">The report</h2>
+<p>Open <code>report.html</code> in your web browser to see the results. The report contains several sections, described below.</p>
+<h3 id="violations-table">Violations table</h3>
+<p>The report contains a table listing the violations found in the EPUB. The table columns are:</p>
+<ul>
+<li><code>Impact</code>: the severity of the violation</li>
+<li><code>Rule</code>: identifier for the rule that was violated</li>
+<li><code>Location</code>: where in the book the violation occurred</li>
+<li><code>Details</code>: suggestions on how to fix the problem, as well as a link to the relevant topic page in our online knowledge base.</li>
+</ul>
+<p>There is a set of drop-down filters at the top of the table where you can refine by Impact, File, and Rule.</p>
+<h3 id="outlines">Outlines</h3>
+<p>The outlines are intended to assist with manual checking. They represent extracted views of different aspects of the EPUB. The outlines are:</p>
+<ul>
+<li><strong>Table of contents</strong>, taken from the EPUB navigation document</li>
+<li><strong>Headings</strong>, including indications of missing heading levels (i.e. going from <code>h1</code> to <code>h3</code> with no <code>h2</code> in between)</li>
+<li><strong>HTML</strong>, which represents heading content and sectioning content</li>
+</ul>
+<h3 id="accessibility-metadata-summary">Accessibility metadata summary</h3>
+<p>This section lists both present accessibility metadata, summarized in a table, as well as a list of what&#39;s missing or empty.</p>
+<h3 id="images">Images</h3>
+<p>This table contains each image in the EPUB and information about it. The table columns are:</p>
+<ul>
+<li><code>Image</code>: the image itself</li>
+<li><code>alt attribute</code>: the contents of the <code>alt</code> attribute</li>
+<li><code>aria-describedby</code>: the contents of the element referenced by the <code>aria-describedby</code> attribute</li>
+<li><code>Associated figcaption</code>: the <code>figcaption</code> for this image</li>
+<li><code>Location</code>: location in the EPUB of this image</li>
+</ul>
