@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ace by DAISY Documentation: CLI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 <h1 id="command-line-interface">Command Line Interface</h1>
 <ul>
 <li><a href="#overview">Overview</a></li>
@@ -89,7 +96,7 @@ Ace by DAISY, an Accessibility Checker for EPUB
 <p>Example:</p>
 <pre><code>$ ace --outdir results ~/Documents/book.epub
 </code></pre><p>This will produce output in a <code>results</code> subdirectory of your current working directory. If that directory does not exist, it will be created.</p>
-<p><em>Note: If you do not specify an <code>--outputdir</code> option, Ace outputs the JSON version of the report on the command line and saves nothing to disk.</em></p>
+<p><em>Note: If you do not specify an <code>--outdir</code> option, Ace outputs the JSON version of the report on the command line and saves nothing to disk.</em></p>
 <h3 id="tempdir">tempdir</h3>
 <p>Specify a custom path to save temporary reports to.</p>
 <p>Syntax: <code>--tempdir</code> or <code>-t</code>, followed by the path</p>
@@ -137,3 +144,5 @@ debug:    dc:identifier=com.github.epub-a11y-checker.epub-a11y-tests-001, dc:des
 <pre><code>$ ace --silent ~/Documents/book.epub
 $
 </code></pre><p>Note that the log file is not &#39;silent&#39;; it contains the default level of detail about Ace&#39;s operation.</p>
+</body>
+</html>

@@ -1,8 +1,11 @@
 <h1 id="ace-by-daisy">Ace, by DAISY</h1>
-<p>Ace, the Accessibility Checker for EPUB, is a tool developed by the <a href="http://daisy.org">DAISY Consortium</a> to assist with the evaluation of accessibility features of EPUB publications. Its automated accessibility checks assist in the evaluation of conformance to the <a href="http://www.idpf.org/epub/latest/accessibility">EPUB Accessibility</a> specification.</p>
-<p>It is important to keep in mind that only a limited portion of accessibility checks can be automated, and therefore <strong>Ace is just a helper tool to assist in a broader, human-driven, evaluation process</strong>.</p>
-<h1 id="about-this-guide">About this guide</h1>
-<p>This document is intended to help new users get started with Ace. Ace is a command line tool, which means that you&#39;ll run it by typing commands into a terminal window (also called a <em>&quot;shell&quot;</em> or <em>&quot;command prompt&quot;</em>). Here&#39;s how to open a terminal window:</p>
+<p>Ace, the Accessibility Checker for EPUB, is a tool developed by the <a href="http://daisy.org">DAISY Consortium</a> to assist with the evaluation of the accessibility of EPUB publications. Its automated accessibility checks assist in the evaluation of conformance to the <a href="http://www.idpf.org/epub/latest/accessibility">EPUB Accessibility</a> specification.</p>
+<p>It is important to keep in mind that a limited portion of accessibility checks can be automated. Therefore, <strong>Ace is not a complete accessibility conformance evaluation tool; instead, it is an aid for a broader, human driven evaluation process</strong>.</p>
+<p>This document is intended to help new users get started with Ace. Additional documentation, recommended for advanced users, can be found over at <a href="https://daisy.github.io/ace">github</a>.</p>
+<h1 id="important-note-about-beta-testing">Important note about Beta testing</h1>
+<p>This tool is remains in development and is not currently ready for everyone to use. We are actively seeking technical experts from the publishing industry to assist by offering feedback on this beta release, to refine the Ace tool ready for a mainstream release later this year. If you are not a technical publishing expert, please join our mailing list for news about subsequent releases and other industry news.</p>
+<h1 id="basics">Basics</h1>
+<p> Ace is a command line tool, which means that you&#39;ll run it by typing commands into a terminal window (also called a <em>&quot;shell&quot;</em> or <em>&quot;command prompt&quot;</em>). Here&#39;s how to open a terminal window:</p>
 <ul>
 <li>On Windows: <code>Windows System-&gt;Command Prompt</code> <em>or</em> <code>Start-&gt;Run-&gt;cmd.exe</code></li>
 <li>On Mac: <code>Applications-&gt;Utilities-&gt;Terminal</code></li>
@@ -13,8 +16,8 @@
 <li>On Mac: <code>~/Documents/my-book.epub</code> (or, in expanded form, <code>/Users/username/Documents/my-book.epub</code>)</li>
 <li>On Windows: <code>c:\Users\username\Documents\my-book.epub</code>.</li>
 </ul>
+<p>You may use relative or absolute paths. </p>
 <p>Ace will require that you enter the path to your EPUB file and also the path where you would like Ace&#39;s report stored.</p>
-<p>Additional documentation for Ace, recommended for advanced users, can be found over at <a href="https://daisy.github.io/ace">github</a>.</p>
 <h1 id="getting-started">Getting started</h1>
 <ul>
 <li><a href="#installation">Installation</a><ul>
@@ -36,8 +39,9 @@
 </li>
 </ul>
 <h2 id="installation">Installation</h2>
+<p><em>Note: internet connectivity is required for both installation steps</em></p>
 <h3 id="install-node-js">Install Node.JS</h3>
-<p>Ace relies on an open source Javascript framework called Node, which is freely available to download. You must install Node first before installing Ace. Installing Node requires administrator privileges.</p>
+<p>Ace relies on an open source Javascript framework called Node, which is freely available to download. You must install Node first before installing Ace. Node installation requires administrator privileges.</p>
 <ul>
 <li>Go to <a href="https://nodejs.org/">Node.JS</a></li>
 <li>Download version 6 or higher</li>
@@ -45,21 +49,21 @@
 </ul>
 <h3 id="install-ace">Install Ace</h3>
 <ul>
-<li>After installing Node, open a shell window</li>
+<li>After installing Node, open a terminal window</li>
 <li>Type <code>$ npm install ace-core -g</code> to install Ace</li>
 </ul>
-<p>If everything went smoothly, you should now be able to run the <code>ace</code> command in your shell. Try typing</p>
+<p>If everything went smoothly, you should now be able to run the <code>ace</code> command in your terminal window. Try typing</p>
 <pre><code>$ ace --help
 </code></pre><p>Ace should display usage information and then exit.</p>
 <h2 id="usage">Usage</h2>
 <h3 id="checking-an-epub">Checking an EPUB</h3>
 <p>You can check an EPUB by running the <code>ace</code> command followed by the path to the EPUB document. For example:</p>
 <pre><code>$ ace ~/Documents/moby-dick.epub
-</code></pre><p>The above command will run the automated accessibility tests on the EPUB document and output the results in the shell.</p>
+</code></pre><p>The above command will run the automated accessibility tests on the EPUB document and output the results in the terminal window.</p>
 <h3 id="storing-the-results">Storing the results</h3>
-<p>You can specify the directory for Ace to store its output with the <code>--outputdir</code> option. For example:</p>
-<pre><code>$ ace --outputdir ~/Documents/moby-dick-report ~/Documents/moby-dick.epub
-</code></pre><p><em>Note that if you do not specify a directory with <code>--outputdir</code>, no reports get saved. You would only see output in the shell.</em></p>
+<p>You can specify the directory for Ace to store its output with the <code>--outdir</code> option. For example:</p>
+<pre><code>$ ace --outdir ~/Documents/moby-dick-report ~/Documents/moby-dick.epub
+</code></pre><p><em>Note that if you do not specify a directory with <code>--outdir</code>, no reports get saved. You would only see output in the terminal window.</em></p>
 <p>If the specified directory does not exist, it will be created. In this example, two versions of the results report will be found under the <code>~/Documents/moby-dick-report</code> directory:</p>
 <ul>
 <li><code>report.html</code>: A human-readable version of the report, in HTML format.</li>
@@ -94,3 +98,7 @@
 <li><code>Associated figcaption</code>: the <code>figcaption</code> for this image</li>
 <li><code>Location</code>: location in the EPUB of this image</li>
 </ul>
+<h1 id="feedback">Feedback</h1>
+<p>What to do if something goes wrong:</p>
+<p>In the first instance check the Ace issue tracker on Github to see if you have encountered a known issue which we’re working on. If the issue is not currently documented please raise it as a new issue on Github.</p>
+<p>We also welcome your broader comments about the tool at any time during the beta testing process. Please use the Ace feedback form.</p>

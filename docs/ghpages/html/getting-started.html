@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ace by DAISY Documentation: Getting Started</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 <h1 id="getting-started">Getting started</h1>
 <ul>
 <li><a href="#installation">Installation</a><ul>
@@ -20,11 +27,7 @@
 </ul>
 <h3 id="install-ace">Install Ace</h3>
 <ul>
-<li>After installing Node, open a shell window<ul>
-<li>On Windows: <code>Windows System-&gt;Command Prompt</code> <em>or</em> <code>Start-&gt;Run-&gt;cmd.exe</code></li>
-<li>On Mac: <code>Applications-&gt;Utilities-&gt;Terminal</code></li>
-</ul>
-</li>
+<li>After installing Node, open a shell window</li>
 <li>Type <code>npm install ace-core -g</code> to install Ace</li>
 </ul>
 <p>If everything went smoothly, you should now be able to run the <code>ace</code> command in your shell.</p>
@@ -34,12 +37,13 @@
 <pre><code>$ ace ~/Documents/moby-dick.epub
 </code></pre><p>The above command will run the automated accessibility tests on the EPUB document and output the results.</p>
 <h3 id="getting-the-results">Getting the results</h3>
-<p>You can specify the directory for Ace to store its output with the <code>--outputdir</code> option. For example:</p>
-<pre><code>$ ace --outputdir ~/Documents/moby-dick-report ~/Documents/moby-dick.epub
-</code></pre><p><em>Note that if you do not specify a directory with <code>--outputdir</code>, no reports get saved. You would only see output in the shell.</em></p>
+<p>You can specify the directory for Ace to store its output with the <code>--outdir</code> option. For example:</p>
+<pre><code>$ ace --outdir ~/Documents/moby-dick-report ~/Documents/moby-dick.epub
+</code></pre><p><em>Note that if you do not specify a directory with <code>--outdir</code>, no reports get saved. You would only see output in the shell.</em></p>
 <p>If the specified directory does not exist, it will be created. In this example, two versions of the results report will be found under the <code>~/Documents/moby-dick-report</code> directory:</p>
 <ul>
-<li><code>report.json</code>: A machine-readable version of the report, in JSON format</li>
-<li><code>report.html</code>: A human-readable version of the report, in HTML format.</li>
+<li><code>report.json</code>: A machine-readable version of the report, in <a href="report-json.html">JSON</a> format</li>
+<li><code>report.html</code>: A human-readable version of the report, in <a href="report-html.html">HTML</a> format.</li>
 </ul>
-<p>Read a <a href="reports.html">detailed overview</a> of these formats.</p>
+</body>
+</html>

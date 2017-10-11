@@ -1,12 +1,17 @@
 # Ace, by DAISY
 
-Ace, the Accessibility Checker for EPUB, is a tool developed by the [DAISY Consortium](http://daisy.org) to assist with the evaluation of accessibility features of EPUB publications. Its automated accessibility checks assist in the evaluation of conformance to the [EPUB Accessibility](http://www.idpf.org/epub/latest/accessibility) specification.
+Ace, the Accessibility Checker for EPUB, is a tool developed by the [DAISY Consortium](http://daisy.org) to assist with the evaluation of the accessibility of EPUB publications. Its automated accessibility checks assist in the evaluation of conformance to the [EPUB Accessibility](http://www.idpf.org/epub/latest/accessibility) specification.
 
-It is important to keep in mind that only a limited portion of accessibility checks can be automated, and therefore __Ace is just a helper tool to assist in a broader, human-driven, evaluation process__.
+It is important to keep in mind that a limited portion of accessibility checks can be automated. Therefore, __Ace is not a complete accessibility conformance evaluation tool; instead, it is an aid for a broader, human driven evaluation process__.
 
-# About this guide
+This document is intended to help new users get started with Ace. Additional documentation, recommended for advanced users, can be found over at [github](https://daisy.github.io/ace).
 
-This document is intended to help new users get started with Ace. Ace is a command line tool, which means that you'll run it by typing commands into a terminal window (also called a _"shell"_ or _"command prompt"_). Here's how to open a terminal window:
+# Important note about Beta testing
+This tool is remains in development and is not currently ready for everyone to use. We are actively seeking technical experts from the publishing industry to assist by offering feedback on this beta release, to refine the Ace tool ready for a mainstream release later this year. If you are not a technical publishing expert, please join our mailing list for news about subsequent releases and other industry news.
+
+# Basics
+
+ Ace is a command line tool, which means that you'll run it by typing commands into a terminal window (also called a _"shell"_ or _"command prompt"_). Here's how to open a terminal window:
 
 * On Windows: `Windows System->Command Prompt` _or_ `Start->Run->cmd.exe`
 * On Mac: `Applications->Utilities->Terminal`
@@ -18,9 +23,10 @@ Another thing you should understand before using Ace is how to type the path to 
 * On Mac: `~/Documents/my-book.epub` (or, in expanded form, `/Users/username/Documents/my-book.epub`)
 * On Windows: `c:\Users\username\Documents\my-book.epub`.
 
+You may use relative or absolute paths. 
+
 Ace will require that you enter the path to your EPUB file and also the path where you would like Ace's report stored.
 
-Additional documentation for Ace, recommended for advanced users, can be found over at [github](https://daisy.github.io/ace).
 
 # Getting started
 
@@ -38,9 +44,11 @@ Additional documentation for Ace, recommended for advanced users, can be found o
 
 ## Installation
 
+_Note: internet connectivity is required for both installation steps_
+
 ### Install Node.JS
 
-Ace relies on an open source Javascript framework called Node, which is freely available to download. You must install Node first before installing Ace. Installing Node requires administrator privileges.
+Ace relies on an open source Javascript framework called Node, which is freely available to download. You must install Node first before installing Ace. Node installation requires administrator privileges.
 
 * Go to [Node.JS](https://nodejs.org/)
 * Download version 6 or higher
@@ -49,10 +57,10 @@ Ace relies on an open source Javascript framework called Node, which is freely a
 
 ### Install Ace
 
-* After installing Node, open a shell window
+* After installing Node, open a terminal window
 * Type `$ npm install ace-core -g` to install Ace
 
-If everything went smoothly, you should now be able to run the `ace` command in your shell. Try typing
+If everything went smoothly, you should now be able to run the `ace` command in your terminal window. Try typing
 
 ```
 $ ace --help
@@ -70,17 +78,17 @@ You can check an EPUB by running the `ace` command followed by the path to the E
 $ ace ~/Documents/moby-dick.epub
 ```
 
-The above command will run the automated accessibility tests on the EPUB document and output the results in the shell.
+The above command will run the automated accessibility tests on the EPUB document and output the results in the terminal window.
 
 ### Storing the results
 
-You can specify the directory for Ace to store its output with the `--outputdir` option. For example:
+You can specify the directory for Ace to store its output with the `--outdir` option. For example:
 
 ```
-$ ace --outputdir ~/Documents/moby-dick-report ~/Documents/moby-dick.epub
+$ ace --outdir ~/Documents/moby-dick-report ~/Documents/moby-dick.epub
 ```
 
-_Note that if you do not specify a directory with `--outputdir`, no reports get saved. You would only see output in the shell._
+_Note that if you do not specify a directory with `--outdir`, no reports get saved. You would only see output in the terminal window._
 
 If the specified directory does not exist, it will be created. In this example, two versions of the results report will be found under the `~/Documents/moby-dick-report` directory:
 
@@ -123,3 +131,11 @@ This table contains each image in the EPUB and information about it. The table c
 * `aria-describedby`: the contents of the element referenced by the `aria-describedby` attribute
 * `Associated figcaption`: the `figcaption` for this image
 * `Location`: location in the EPUB of this image
+
+# Feedback
+
+What to do if something goes wrong:
+
+In the first instance check the Ace issue tracker on Github to see if you have encountered a known issue which we’re working on. If the issue is not currently documented please raise it as a new issue on Github.
+
+We also welcome your broader comments about the tool at any time during the beta testing process. Please use the Ace feedback form.
